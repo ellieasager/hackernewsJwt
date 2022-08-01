@@ -8,10 +8,10 @@ import (
 	"fmt"
 	"strconv"
 
-	"github.com/ellieasager/hackernews/graph/generated"
-	"github.com/ellieasager/hackernews/graph/model"
-	"github.com/ellieasager/hackernews/internal/links"
-	"github.com/ellieasager/hackernews/internal/users"
+	"github.com/ellieasager/hackernewsJwt/graph/generated"
+	"github.com/ellieasager/hackernewsJwt/graph/model"
+	"github.com/ellieasager/hackernewsJwt/internal/links"
+	"github.com/ellieasager/hackernewsJwt/internal/users"
 )
 
 // CreateLink is the resolver for the createLink field.

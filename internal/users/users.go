@@ -3,7 +3,7 @@ package users
 import (
 	"log"
 
-	database "github.com/ellieasager/hackernews/internal/pkg/db/mysql"
+	database "github.com/ellieasager/hackernewsJwt/internal/pkg/db/mysql"
 )
 
 type User struct {

@@ -3,8 +3,8 @@ package links
 import (
 	"log"
 
-	database "github.com/ellieasager/hackernews/internal/pkg/db/mysql"
-	"github.com/ellieasager/hackernews/internal/users"
+	database "github.com/ellieasager/hackernewsJwt/internal/pkg/db/mysql"
+	"github.com/ellieasager/hackernewsJwt/internal/users"
 )
 
 // #1

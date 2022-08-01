@@ -7,9 +7,9 @@ import (
 
 	"github.com/99designs/gqlgen/graphql/handler"
 	"github.com/99designs/gqlgen/graphql/playground"
-	"github.com/ellieasager/hackernews/graph"
-	"github.com/ellieasager/hackernews/graph/generated"
-	database "github.com/ellieasager/hackernews/internal/pkg/db/mysql"
+	"github.com/ellieasager/hackernewsJwt/graph"
+	"github.com/ellieasager/hackernewsJwt/graph/generated"
+	database "github.com/ellieasager/hackernewsJwt/internal/pkg/db/mysql"
 	"github.com/go-chi/chi"
 )
 
