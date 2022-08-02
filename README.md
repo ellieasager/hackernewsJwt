@@ -1,7 +1,7 @@
 # hackernews
 A project to learn integration of go with gqlgen
 
-A Hackernews clone with Go, `gqlgen` and `golang-jwt`. 
+A Hackernews clone with Go, GraphQL and JWT. 
 
 The API should be able to handle registration, authentication, submitting links and getting list of links.
 
@@ -11,33 +11,26 @@ The API should be able to handle registration, authentication, submitting links 
 ```
 CREATE DATABASE hackernews;
 ```
+
 2. Cli
 ```
 git clone https://github.com/ellieasager/hackernewsJwt
 cd hackernewsJwt
-go mod init github.com/ellieasager/hackernewsJwt
-go mod tidy
-go get github.com/99designs/gqlgen
 printf '// +build tools\npackage tools\nimport _ "github.com/99designs/gqlgen"' | gofmt > tools.go
-go get -u github.com/go-sql-driver/mysql
-go get github.com/golang-migrate/migrate/v4/cmd/migrate/
+go mod tidy
 ```
 
 3. In code:
 In the file `internal/pkg/db/mysql/mysql.go` set username and password for the db connection in method `InitDB()`.
 
-4. Cli: make sure to use your username and password when running `migrate -database` below
+4. Cli: make sure to use your username and password when running the command below
 ```
-go build -tags 'mysql' -ldflags="-X main.Version=1.0.0" -o $GOPATH/bin/migrate github.com/golang-migrate/migrate/v4/cmd/migrate/
-migrate -database mysql://root:dbpass@/hackernews -path internal/pkg/db/migrations/mysql up
-go get -u github.com/golang-jwt/jwt/v4
-go get -u golang.org/x/crypto/bcrypt
-go mod tidy
-go run github.com/99designs/gqlgen generate
-go run server.go
+migrate -database mysql://root:dbpassword@/hackernews -path internal/pkg/db/migrations/mysql up
 ```
 
-5. In your browser go to http://localhost:8080/
+5. Cli: `go run server.go`
+
+6. In your browser go to http://localhost:8080/
 
 - Try creating a user:
 ```
@@ -57,4 +50,9 @@ query {
     name
   }
 }
+```
+
+7. If you need to re-generate files, run 
+```
+go run github.com/99designs/gqlgen generate
 ```
