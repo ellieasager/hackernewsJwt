@@ -18,12 +18,12 @@ type Link struct {
 //#2
 func (link Link) Save() int64 {
 	//#3
-	stmt, err := database.Db.Prepare("INSERT INTO Links(Title,Address) VALUES(?,?)")
+	stmt, err := database.Db.Prepare("INSERT INTO Links(Title,Address) VALUES(?,?,?)")
 	if err != nil {
 		log.Fatal(err)
 	}
 	//#4
-	res, err := stmt.Exec(link.Title, link.Address)
+	res, err := stmt.Exec(link.Title, link.Address, link.User.ID)
 	if err != nil {
 		log.Fatal(err)
 	}

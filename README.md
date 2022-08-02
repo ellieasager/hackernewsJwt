@@ -31,6 +31,7 @@ In the file `internal/pkg/db/mysql/mysql.go` set username and password for the d
 go build -tags 'mysql' -ldflags="-X main.Version=1.0.0" -o $GOPATH/bin/migrate github.com/golang-migrate/migrate/v4/cmd/migrate/
 migrate -database mysql://root:dbpass@/hackernews -path internal/pkg/db/migrations/mysql up
 go get -u github.com/golang-jwt/jwt/v4
+go get -u golang.org/x/crypto/bcrypt
 go mod tidy
 go run github.com/99designs/gqlgen generate
 go run server.go
